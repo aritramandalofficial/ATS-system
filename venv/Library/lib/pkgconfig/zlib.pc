@@ -1,0 +1,13 @@
+prefix=C:/resources/flutter-apps/flutter_universe/ATS system/venv/Library
+exec_prefix=C:/resources/flutter-apps/flutter_universe/ATS system/venv/Library
+libdir=C:/resources/flutter-apps/flutter_universe/ATS system/venv/Library/lib
+sharedlibdir=C:/resources/flutter-apps/flutter_universe/ATS system/venv/Library/lib
+includedir=C:/resources/flutter-apps/flutter_universe/ATS system/venv/Library/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.13
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}
