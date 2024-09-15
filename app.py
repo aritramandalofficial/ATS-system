@@ -1,3 +1,8 @@
+pip install streamlit
+pip install google-generativeai
+pip install google-generativeai
+pip install python-dotenv
+
 import streamlit as st
 import google.generativeai as genai
 import os
