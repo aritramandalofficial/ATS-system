@@ -1,14 +1,14 @@
 import streamlit as st
 import google.generativeai as genai
 import os
-import PyPDF2 as pdf
+import pdfplumber 
 
 from dotenv import load_dotenv
 
 load_dotenv() ## load all the enviornment varables
 
-api_key = os.getenv("GOOGLE_API_KEY")
-
+#api_key = os.getenv("GOOGLE_API_KEY")
+genai.configure(api_key='AIzaSyBV31Lr0fM0CWMXr5vDKKEWuruseu5po-g')
 
 ## Gemini pro response
 def get_gemini_response(input):
@@ -17,12 +17,20 @@ def get_gemini_response(input):
     return response.text
 
 
+
 def input_pdf_text(uploaded_file):
+    text = ""
+    with pdfplumber.open(uploaded_file) as pdf:
+        for page in pdf.pages:
+            text += page.extract_text()
+    return text
+
+#def input_pdf_text(uploaded_file):
     reader = PyPDF2.PdfReader(uploaded_file)
     text = ""
     for page_num in reader(len(reader.pages)):
         page = reader.pages[page_num]
-        text += page.extract_text()
+        text+=str(page.extract_text())
     return text
 
 
