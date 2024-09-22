@@ -7,8 +7,7 @@ from dotenv import load_dotenv
 
 load_dotenv() ## load all the enviornment varables
 
-#api_key = os.getenv("GOOGLE_API_KEY")
-genai.configure(api_key='')
+google_api_key = os.getenv('GOOGLE_API_KEY')
 
 ## Gemini pro response
 def get_gemini_response(input):
