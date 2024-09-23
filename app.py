@@ -44,14 +44,14 @@ data analyst and bidg data engineer. Your task is to evaluate the resume based o
 should provide best assitance for improving the resume. Assign the percentage MAtching based on jd(Job description) and the missing keywords with high accuracy. 
 resume:{text} 
 description: {jd}
-I want the response in one single string having the stucture {{"JD Match":"%", MissingKeywords:[]","ProfileSummary":""}}
+I want the response in one single string having the stucture {{"MissingKeywords:[]","ProfileSummary":""}}
 """
 
 ## streamlit app
 
-st.title("Smart ATS")
-st.text("Improve Your Resume ATS")
-jd=st.text_area("PAste the Job description")
+st.title("Gemini ATS")
+st.text("ATS will provide tips to improve your resume")
+jd=st.text_area("Paste the Job description")
 uploaded_file=st.file_uploader("Upload Your Resume",type="pdf",help="Please upload the pdf")
 
 submit = st.button("Submit")
